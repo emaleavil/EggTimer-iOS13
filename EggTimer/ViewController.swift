@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CountDownTimerDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
-    private let countDownTimer: CountDownTimer = CountDownTimerImpl()
+    private var countDownTimer: CountDownTimer = CountDownTimerImpl()
+    
+    override func viewDidLoad() {
+        countDownTimer.delegate = self
+    }
     
     @IBAction func hardnessSelected(_ sender: UIButton) {
         countDownTimer.stop()
@@ -23,10 +28,14 @@ class ViewController: UIViewController {
         }
         
         let hardness = type.toHardness()
-        
-        countDownTimer.start(timeInMinutes: hardness.time()) {
-            self.titleLabel.text = "DONE"
-        }
+        countDownTimer.start(timeInMinutes: hardness.time())
     }
     
+    func onTimeUpdated(currentTime: Int, endTime: Int) {
+        self.progressBar.updateProgress(currentTime: currentTime, endTime: endTime )
+    }
+    
+    func onFinished() {
+        self.titleLabel.text = "DONE"
+    }
 }

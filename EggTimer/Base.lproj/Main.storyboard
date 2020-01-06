@@ -120,6 +120,22 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="346" width="288" height="134"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="0KL-fW-CHa">
+                                                <rect key="frame" x="32" y="64.5" width="224" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="9Bs-E5-BPu"/>
+                                                </constraints>
+                                                <color key="progressTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0KL-fW-CHa" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="40C-oh-EM3"/>
+                                            <constraint firstItem="0KL-fW-CHa" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" constant="32" id="KpQ-YR-UED"/>
+                                            <constraint firstItem="0KL-fW-CHa" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="hUm-xx-c0B"/>
+                                            <constraint firstAttribute="trailing" secondItem="0KL-fW-CHa" secondAttribute="trailing" constant="32" id="oFV-rZ-1pG"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -134,6 +150,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="0KL-fW-CHa" id="efd-cP-xas"/>
                         <outlet property="titleLabel" destination="XLm-5r-pSP" id="5Qx-6I-hZr"/>
                     </connections>
                 </viewController>

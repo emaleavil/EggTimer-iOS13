@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E61ED8123B5613200E0FC73 /* HardnessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61ED8023B5613200E0FC73 /* HardnessModel.swift */; };
 		4E61ED8323B5795100E0FC73 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E61ED8223B5795100E0FC73 /* CountDownTimer.swift */; };
+		4EBECA8F23C3DE350045199A /* ProgressView+UpdateProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBECA8E23C3DE350045199A /* ProgressView+UpdateProgress.swift */; };
 		AD5C106222D34E35001E14A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD5C106122D34E35001E14A5 /* README.md */; };
 		AD5C106622D36212001E14A5 /* alarm_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD5C106522D36212001E14A5 /* alarm_sound.mp3 */; };
 		ADF037EE22D332A800A69E9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF037ED22D332A800A69E9A /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		4E61ED8023B5613200E0FC73 /* HardnessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardnessModel.swift; sourceTree = "<group>"; };
 		4E61ED8223B5795100E0FC73 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
+		4EBECA8E23C3DE350045199A /* ProgressView+UpdateProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressView+UpdateProgress.swift"; sourceTree = "<group>"; };
 		AD5C106122D34E35001E14A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD5C106522D36212001E14A5 /* alarm_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_sound.mp3; sourceTree = "<group>"; };
 		ADF037EA22D332A800A69E9A /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 				ADF037FB22D332AD00A69E9A /* Info.plist */,
 				4E61ED8023B5613200E0FC73 /* HardnessModel.swift */,
 				4E61ED8223B5795100E0FC73 /* CountDownTimer.swift */,
+				4EBECA8E23C3DE350045199A /* ProgressView+UpdateProgress.swift */,
 			);
 			path = EggTimer;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				ADF037F022D332A800A69E9A /* SceneDelegate.swift in Sources */,
 				4E61ED8323B5795100E0FC73 /* CountDownTimer.swift in Sources */,
 				4E61ED8123B5613200E0FC73 /* HardnessModel.swift in Sources */,
+				4EBECA8F23C3DE350045199A /* ProgressView+UpdateProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,30 +9,46 @@
 import Foundation
 
 protocol CountDownTimer {
-    func start(timeInMinutes: Int, onFinished: @escaping () -> Void)
+    
+    var delegate: CountDownTimerDelegate? { get set }
+    
+    func start(timeInMinutes: Int)
     func stop()
 }
 
+protocol CountDownTimerDelegate {
+    func onTimeUpdated(currentTime: Int, endTime: Int) -> Void
+    func onFinished() -> Void
+}
 class CountDownTimerImpl: CountDownTimer {
+    
+    var delegate: CountDownTimerDelegate? = nil
     
     private var timer: Timer? = nil
     private var countDownInSec: Int? = nil
+    private var endTime: Int? = nil
     
-    func start(timeInMinutes: Int, onFinished: @escaping () -> Void) {
+    
+    func start(timeInMinutes: Int) {
         print("Timer started")
-        countDownInSec = timeInMinutes * 1
+        countDownInSec = timeInMinutes * 60
+        endTime =  timeInMinutes * 60
+        
         if timer == nil {
+            delegate?.onTimeUpdated(currentTime: 0, endTime: self.endTime!)
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
                 guard let countDown = self.countDownInSec else {
                     self.stop()
                     return
                 }
                 
-                self.countDownInSec = countDown - 1
+                let newTimeInSec = countDown - 1
+                self.countDownInSec = newTimeInSec
+                self.delegate?.onTimeUpdated(currentTime: self.endTime! - newTimeInSec, endTime: self.endTime!)
                 print("CountDown: \(countDown)")
                 if self.countDownInSec == 0 {
                     self.stop()
-                    onFinished()
+                    self.delegate?.onFinished()
                 }
                 
             })
